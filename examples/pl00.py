@@ -8,10 +8,11 @@ import datetime
 
 writer = SummaryWriter()
 
+npoints = 1000
 dataset = datasets.MNIST('mnist', train=False, download=True)
-images = dataset.test_data[:100].float()
-label = dataset.test_labels[:100]
-features = images.view(100, 784)
+images = dataset.test_data[:npoints].float()
+label = dataset.test_labels[:npoints]
+features = images.view(npoints, 784)
 #writer.add_embedding(features, metadata=label, label_img=images.unsqueeze(1))
 writer.add_embedding(features, label_img=images.unsqueeze(1))
 """
