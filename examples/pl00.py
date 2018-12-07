@@ -8,7 +8,7 @@ import datetime
 
 writer = SummaryWriter()
 
-npoints = 1000
+npoints = 3000
 dataset = datasets.MNIST('mnist', train=False, download=True)
 images = dataset.test_data[:npoints].float()
 label = dataset.test_labels[:npoints]
