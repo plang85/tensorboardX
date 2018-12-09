@@ -13,8 +13,7 @@ dataset = datasets.MNIST('mnist', train=False, download=True)
 images = dataset.test_data[:npoints].float()
 label = dataset.test_labels[:npoints]
 features = images.view(npoints, 784)
-#writer.add_embedding(features, metadata=label, label_img=images.unsqueeze(1))
-writer.add_embedding(features, label_img=images.unsqueeze(1))
+writer.add_embedding(features, metadata=label)#, label_img=images.unsqueeze(1))
 """
 writer.add_embedding(features, global_step=1, tag='noMetadata')
 
